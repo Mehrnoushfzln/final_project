@@ -91,3 +91,14 @@
         }
     }
 }
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'CMP9140 Research Project_Mehrnoush_Fazlollah Nejad (e0b83536-7137-4a8e-96c5-2b997bd8c016)'
+    subscriptionId: 'e0b83536-7137-4a8e-96c5-2b997bd8c016'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Mehrnoush_DR'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'arm'
+    deploymentMode: 'Validation'
