@@ -1,0 +1,2744 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_aadAuthority": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_applicationId": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_audience": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_objectId": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_tenantId": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_machineName": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_aadAuthority_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_applicationId_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_audience_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_objectId_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_tenantId_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_aadAuthority": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_applicationId": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_audience": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_objectId": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_tenantId": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_machineName": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_aadAuthority_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_applicationId_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_audience_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_objectId_1": {
+            "type": "SecureString"
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_tenantId_1": {
+            "type": "SecureString"
+        },
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "type": "SecureString"
+        },
+        "servers_mehrnoush_server11_name": {
+            "defaultValue": "mehrnoush-server11",
+            "type": "String"
+        },
+        "vaults_MehrnoushVault_name": {
+            "defaultValue": "MehrnoushVault",
+            "type": "String"
+        },
+        "storageAccounts_mehrnoushstorage11_name": {
+            "defaultValue": "mehrnoushstorage11",
+            "type": "String"
+        },
+        "storageAccounts_nnznwxmehrnoushvasrcache_name": {
+            "defaultValue": "nnznwxmehrnoushvasrcache",
+            "type": "String"
+        },
+        "automationAccounts_mehrnoush_k9b_asr_automationaccount_name": {
+            "defaultValue": "mehrnoush-k9b-asr-automationaccount",
+            "type": "String"
+        },
+        "virtualmachines_mehrnoushvm23_externalid": {
+            "defaultValue": "/subscriptions/e0b83536-7137-4a8e-96c5-2b997bd8c016/resourceGroups/siteresource11/providers/microsoft.compute/virtualmachines/mehrnoushvm23",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Automation/automationAccounts",
+            "apiVersion": "2022-08-08",
+            "name": "[parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name')]",
+            "location": "eastus",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "sku": {
+                    "name": "Basic"
+                },
+                "encryption": {
+                    "keySource": "Microsoft.Automation",
+                    "identity": {}
+                }
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults",
+            "apiVersion": "2023-04-01",
+            "name": "[parameters('vaults_MehrnoushVault_name')]",
+            "location": "eastus",
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {
+                "securitySettings": {
+                    "immutabilitySettings": {
+                        "state": "Unlocked"
+                    }
+                },
+                "publicNetworkAccess": "Enabled",
+                "restoreSettings": {
+                    "crossSubscriptionRestoreSettings": {
+                        "crossSubscriptionRestoreState": "Enabled"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[parameters('servers_mehrnoush_server11_name')]",
+            "location": "eastus",
+            "kind": "v12.0",
+            "properties": {
+                "administratorLogin": "Mehrnoush",
+                "version": "12.0",
+                "minimalTlsVersion": "1.2",
+                "publicNetworkAccess": "Enabled",
+                "restrictOutboundNetworkAccess": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2022-09-01",
+            "name": "[parameters('storageAccounts_mehrnoushstorage11_name')]",
+            "location": "eastus",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "properties": {
+                "minimumTlsVersion": "TLS1_0",
+                "allowBlobPublicAccess": true,
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "keyType": "Account",
+                            "enabled": true
+                        },
+                        "blob": {
+                            "keyType": "Account",
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2022-09-01",
+            "name": "[parameters('storageAccounts_nnznwxmehrnoushvasrcache_name')]",
+            "location": "southeastasia",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "properties": {
+                "minimumTlsVersion": "TLS1_0",
+                "allowBlobPublicAccess": true,
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "keyType": "Account",
+                            "enabled": true
+                        },
+                        "blob": {
+                            "keyType": "Account",
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/connectionTypes",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Azure')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "isGlobal": true,
+                "fieldDefinitions": {
+                    "AutomationCertificateName": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    },
+                    "SubscriptionID": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/connectionTypes",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureClassicCertificate')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "isGlobal": true,
+                "fieldDefinitions": {
+                    "SubscriptionName": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    },
+                    "SubscriptionId": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    },
+                    "CertificateAssetName": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/connectionTypes",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureServicePrincipal')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "isGlobal": true,
+                "fieldDefinitions": {
+                    "ApplicationId": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    },
+                    "TenantId": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    },
+                    "CertificateThumbprint": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    },
+                    "SubscriptionId": {
+                        "isEncrypted": false,
+                        "isOptional": false,
+                        "type": "System.String"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobs",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/7ab62498-5da9-457e-aeb7-82162d68dddb')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-ASR-Modify-AutoUpdateForA2AVirtualMachinesAAMMAwEEDAM"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobs",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/SCH_a92ca874-cf67-4127-9078-98c924d46b2a_4d794519-f9d5-492e-8ba2-84f125f9de88_638266140600000000')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-SR-Update-MobilityServiceForA2AVirtualMachinesAAMMAwEEDAM"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobs",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/SCH_a92ca874-cf67-4127-9078-98c924d46b2a_4d794519-f9d5-492e-8ba2-84f125f9de88_638267004600000000')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-SR-Update-MobilityServiceForA2AVirtualMachinesAAMMAwEEDAM"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobs",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/SCH_b79d8373-22e7-4a6d-83e5-7d668d3188f7_4d794519-f9d5-492e-8ba2-84f125f9de88_638265888600000000')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-SR-Update-MobilityServiceForA2AVirtualMachinesAAMMAwEEDAM"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobs",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/SCH_b79d8373-22e7-4a6d-83e5-7d668d3188f7_4d794519-f9d5-492e-8ba2-84f125f9de88_638266752600000000')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-SR-Update-MobilityServiceForA2AVirtualMachinesAAMMAwEEDAM"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobSchedules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/a92ca874-cf67-4127-9078-98c924d46b2a')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-SR-Update-MobilityServiceForA2AVirtualMachinesAAMMAwEEDAM"
+                },
+                "schedule": {
+                    "name": "uksouth-southeastasia-24-hour-retention-policy_f10449b7-edf8-5679-9580-f454ad468e60"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/jobSchedules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/b79d8373-22e7-4a6d-83e5-7d668d3188f7')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "runbook": {
+                    "name": "MS-SR-Update-MobilityServiceForA2AVirtualMachinesAAMMAwEEDAM"
+                },
+                "schedule": {
+                    "name": "southeastasia-uksouth-24-hour-retention-policy_461a7852-7790-5f95-937e-9c8288919480"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AuditPolicyDsc')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Accounts')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Advisor')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Aks')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.AnalysisServices')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ApiManagement')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.AppConfiguration')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ApplicationInsights')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Attestation')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Automation')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Batch')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Billing')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Cdn')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.CloudService')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.CognitiveServices')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Compute')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ContainerInstance')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ContainerRegistry')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.CosmosDB')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DataBoxEdge')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Databricks')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DataFactory')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DataLakeAnalytics')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DataLakeStore')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DataShare')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DeploymentManager')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DesktopVirtualization')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.DevTestLabs')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Dns')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.EventGrid')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.EventHub')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.FrontDoor')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Functions')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.HDInsight')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.HealthcareApis')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.IotHub')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.KeyVault')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Kusto')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.LogicApp')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.MachineLearning')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Maintenance')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ManagedServiceIdentity')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ManagedServices')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.MarketplaceOrdering')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Media')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Migrate')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Monitor')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.MySql')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Network')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.NotificationHubs')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.OperationalInsights')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.PolicyInsights')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.PostgreSql')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.PowerBIEmbedded')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.PrivateDns')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.RecoveryServices')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.RedisCache')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.RedisEnterpriseCache')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Relay')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ResourceMover')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Resources')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Security')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.SecurityInsights')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ServiceBus')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.ServiceFabric')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.SignalR')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Sql')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.SqlVirtualMachine')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.StackHCI')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Storage')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.StorageSync')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.StreamAnalytics')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Support')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Synapse')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.TrafficManager')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Az.Websites')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Azure')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Azure.Storage')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureRM.Automation')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureRM.Compute')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureRM.Profile')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureRM.Resources')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureRM.Sql')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/AzureRM.Storage')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/ComputerManagementDsc')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/GPRegistryPolicyParser')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Microsoft.PowerShell.Core')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Microsoft.PowerShell.Diagnostics')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Microsoft.PowerShell.Management')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Microsoft.PowerShell.Security')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Microsoft.PowerShell.Utility')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Microsoft.WSMan.Management')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/Orchestrator.AssetManagement.Cmdlets')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/PSDscResources')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/SecurityPolicyDsc')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/StateConfigCompositeResources')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/xDSCDomainjoin')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/xPowerShellExecutionPolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/modules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/xRemoteDesktopAdmin')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "contentLink": {}
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/schedules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/southeastasia-uksouth-24-hour-retention-policy_461a7852-7790-5f95-937e-9c8288919480')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "startTime": "2023-08-03T00:01:00+08:00",
+                "expiryTime": "9999-12-31T23:59:59.9999999+00:00",
+                "interval": 1,
+                "frequency": "Day",
+                "timeZone": "Asia/Singapore"
+            }
+        },
+        {
+            "type": "Microsoft.Automation/automationAccounts/schedules",
+            "apiVersion": "2022-08-08",
+            "name": "[concat(parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'), '/uksouth-southeastasia-24-hour-retention-policy_f10449b7-edf8-5679-9580-f454ad468e60')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_mehrnoush_k9b_asr_automationaccount_name'))]"
+            ],
+            "properties": {
+                "startTime": "2023-08-03T00:01:00+01:00",
+                "expiryTime": "9999-12-31T23:59:00+00:00",
+                "interval": 1,
+                "frequency": "Day",
+                "timeZone": "Europe/London"
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-02-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/dailypolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureStorage",
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicy",
+                    "scheduleRunFrequency": "Daily",
+                    "scheduleRunTimes": [
+                        "2023-08-01T00:00:00Z"
+                    ],
+                    "scheduleWeeklyFrequency": 0
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "dailySchedule": {
+                        "retentionTimes": [
+                            "2023-08-01T00:00:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 30,
+                            "durationType": "Days"
+                        }
+                    }
+                },
+                "timeZone": "GMT Standard Time",
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-02-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/DefaultPolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureIaasVM",
+                "instantRPDetails": {},
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicy",
+                    "scheduleRunFrequency": "Daily",
+                    "scheduleRunTimes": [
+                        "2023-08-01T20:00:00Z"
+                    ],
+                    "scheduleWeeklyFrequency": 0
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "dailySchedule": {
+                        "retentionTimes": [
+                            "2023-08-01T20:00:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 30,
+                            "durationType": "Days"
+                        }
+                    }
+                },
+                "instantRpRetentionRangeInDays": 2,
+                "timeZone": "UTC",
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-02-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/EnhancedPolicy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureIaasVM",
+                "policyType": "V2",
+                "instantRPDetails": {},
+                "schedulePolicy": {
+                    "schedulePolicyType": "SimpleSchedulePolicyV2",
+                    "scheduleRunFrequency": "Hourly",
+                    "hourlySchedule": {
+                        "interval": 4,
+                        "scheduleWindowStartTime": "2023-08-01T08:00:00Z",
+                        "scheduleWindowDuration": 12
+                    }
+                },
+                "retentionPolicy": {
+                    "retentionPolicyType": "LongTermRetentionPolicy",
+                    "dailySchedule": {
+                        "retentionTimes": [
+                            "2023-08-01T08:00:00Z"
+                        ],
+                        "retentionDuration": {
+                            "count": 30,
+                            "durationType": "Days"
+                        }
+                    }
+                },
+                "instantRpRetentionRangeInDays": 2,
+                "timeZone": "UTC",
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+            "apiVersion": "2023-02-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/HourlyLogBackup')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "backupManagementType": "AzureWorkload",
+                "workLoadType": "SQLDataBase",
+                "settings": {
+                    "timeZone": "UTC",
+                    "issqlcompression": false,
+                    "isCompression": false
+                },
+                "subProtectionPolicy": [
+                    {
+                        "policyType": "Full",
+                        "schedulePolicy": {
+                            "schedulePolicyType": "SimpleSchedulePolicy",
+                            "scheduleRunFrequency": "Daily",
+                            "scheduleRunTimes": [
+                                "2023-08-01T20:00:00Z"
+                            ],
+                            "scheduleWeeklyFrequency": 0
+                        },
+                        "retentionPolicy": {
+                            "retentionPolicyType": "LongTermRetentionPolicy",
+                            "dailySchedule": {
+                                "retentionTimes": [
+                                    "2023-08-01T20:00:00Z"
+                                ],
+                                "retentionDuration": {
+                                    "count": 30,
+                                    "durationType": "Days"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "policyType": "Log",
+                        "schedulePolicy": {
+                            "schedulePolicyType": "LogSchedulePolicy",
+                            "scheduleFrequencyInMins": 60
+                        },
+                        "retentionPolicy": {
+                            "retentionPolicyType": "SimpleRetentionPolicy",
+                            "retentionDuration": {
+                                "count": 30,
+                                "durationType": "Days"
+                            }
+                        }
+                    }
+                ],
+                "protectedItemsCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationAlertSettings",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/defaultAlertSetting')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "sendToOwners": "DoNotSend",
+                "customEmailAddresses": []
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-southeastasia')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "customDetails": {
+                    "instanceType": "Azure",
+                    "location": "southeastasia"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-uksouth')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "customDetails": {
+                    "instanceType": "Azure",
+                    "location": "uksouth"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationPolicies",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/24-hour-retention-policy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationVaultSettings",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Sql/servers/advancedThreatProtectionSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/CreateIndex')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/DbParameterization')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/DefragmentIndex')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/DropIndex')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/ForceLastGoodPlan')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "auditingState": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/auditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 0,
+                "auditActionsAndGroups": [],
+                "isStorageSecondaryKeyInUse": false,
+                "isAzureMonitorTargetEnabled": false,
+                "isManagedIdentityInUse": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/connectionPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/default')]",
+            "location": "eastus",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "connectionType": "Default"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB')]",
+            "location": "eastus",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "sku": {
+                "name": "Standard",
+                "tier": "Standard",
+                "capacity": 10
+            },
+            "kind": "v12.0,user",
+            "properties": {
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": 268435456000,
+                "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+                "zoneRedundant": false,
+                "readScale": "Disabled",
+                "requestedBackupStorageRedundancy": "Geo",
+                "maintenanceConfigurationId": "/subscriptions/e0b83536-7137-4a8e-96c5-2b997bd8c016/providers/Microsoft.Maintenance/publicMaintenanceConfigurations/SQL_Default",
+                "isLedgerOn": false,
+                "availabilityZone": "NoPreference"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advancedThreatProtectionSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "auditingState": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/auditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 0,
+                "isAzureMonitorTargetEnabled": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/extendedAuditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 0,
+                "isAzureMonitorTargetEnabled": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/ledgerDigestUploads",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Current')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/securityAlertPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled",
+                "disabledAlerts": [
+                    ""
+                ],
+                "emailAddresses": [
+                    ""
+                ],
+                "emailAccountAdmins": false,
+                "retentionDays": 0
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Current')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/vulnerabilityAssessments",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/master/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "recurringScans": {
+                    "isEnabled": false,
+                    "emailSubscriptionAdmins": true,
+                    "emails": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/devOpsAuditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "isAzureMonitorTargetEnabled": false,
+                "isManagedIdentityInUse": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/current')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "kind": "servicemanaged",
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged",
+                "autoRotationEnabled": false
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/extendedAuditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 0,
+                "auditActionsAndGroups": [],
+                "isStorageSecondaryKeyInUse": false,
+                "isAzureMonitorTargetEnabled": false,
+                "isManagedIdentityInUse": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/AllowAllWindowsAzureIps')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/ClientIPAddress_2023-07-31_22-29-41')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/ClientIPAddress_2023-08-01_14-34-10')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Sql/servers/keys",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/ServiceManaged')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "kind": "servicemanaged",
+            "properties": {
+                "serverKeyType": "ServiceManaged"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/securityAlertPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Enabled",
+                "disabledAlerts": [
+                    ""
+                ],
+                "emailAddresses": [
+                    ""
+                ],
+                "emailAccountAdmins": false,
+                "retentionDays": 0
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/sqlVulnerabilityAssessments",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/vulnerabilityAssessments",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "recurringScans": {
+                    "isEnabled": false,
+                    "emailSubscriptionAdmins": true
+                },
+                "storageContainerPath": "[parameters('vulnerabilityAssessments_Default_storageContainerPath')]"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_mehrnoushstorage11_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_mehrnoushstorage11_name'))]"
+            ],
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                },
+                "deleteRetentionPolicy": {
+                    "allowPermanentDelete": false,
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                },
+                "deleteRetentionPolicy": {
+                    "allowPermanentDelete": false,
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/fileServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_mehrnoushstorage11_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_mehrnoushstorage11_name'))]"
+            ],
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "protocolSettings": {
+                    "smb": {}
+                },
+                "cors": {
+                    "corsRules": []
+                },
+                "shareDeleteRetentionPolicy": {
+                    "enabled": true,
+                    "days": 14
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/fileServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "protocolSettings": {
+                    "smb": {}
+                },
+                "cors": {
+                    "corsRules": []
+                },
+                "shareDeleteRetentionPolicy": {
+                    "enabled": true,
+                    "days": 7
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/queueServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_mehrnoushstorage11_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_mehrnoushstorage11_name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/queueServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/tableServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_mehrnoushstorage11_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_mehrnoushstorage11_name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/tableServices",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-southeastasia/asr-a2a-default-southeastasia-container')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-uksouth/asr-a2a-default-uksouth-container')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-uksouth')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-southeastasia/5655b730-d62b-55eb-a383-841c00be5079')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "authenticationIdentityInput": {
+                    "aadAuthority": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_aadAuthority')]",
+                    "applicationId": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_applicationId')]",
+                    "audience": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_audience')]",
+                    "objectId": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_objectId')]",
+                    "tenantId": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_tenantId')]"
+                },
+                "machineName": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_machineName')]",
+                "resourceAccessIdentityInput": {
+                    "aadAuthority": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_aadAuthority_1')]",
+                    "applicationId": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_applicationId_1')]",
+                    "audience": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_audience_1')]",
+                    "objectId": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_objectId_1')]",
+                    "tenantId": "[parameters('replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_tenantId_1')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-uksouth/b0bcb2a3-c98d-5379-b35f-edb6fa016c41')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-uksouth')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]"
+            ],
+            "properties": {
+                "authenticationIdentityInput": {
+                    "aadAuthority": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_aadAuthority')]",
+                    "applicationId": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_applicationId')]",
+                    "audience": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_audience')]",
+                    "objectId": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_objectId')]",
+                    "tenantId": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_tenantId')]"
+                },
+                "machineName": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_machineName')]",
+                "resourceAccessIdentityInput": {
+                    "aadAuthority": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_aadAuthority_1')]",
+                    "applicationId": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_applicationId_1')]",
+                    "audience": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_audience_1')]",
+                    "objectId": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_objectId_1')]",
+                    "tenantId": "[parameters('replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_tenantId_1')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advancedThreatProtectionSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/CreateIndex')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/DbParameterization')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/DefragmentIndex')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/DropIndex')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/ForceLastGoodPlan')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "autoExecuteValue": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "apiVersion": "2014-04-01",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "location": "East US",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "auditingState": "Disabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/auditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 0,
+                "isAzureMonitorTargetEnabled": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "weeklyRetention": "PT0S",
+                "monthlyRetention": "PT0S",
+                "yearlyRetention": "PT0S",
+                "weekOfYear": 0
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 7,
+                "diffBackupIntervalInHours": 24
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/extendedAuditingSettings",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "retentionDays": 0,
+                "isAzureMonitorTargetEnabled": false,
+                "state": "Disabled",
+                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/ledgerDigestUploads",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Current')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/securityAlertPolicies",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled",
+                "disabledAlerts": [
+                    ""
+                ],
+                "emailAddresses": [
+                    ""
+                ],
+                "emailAccountAdmins": false,
+                "retentionDays": 0
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Current')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "state": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases/vulnerabilityAssessments",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[concat(parameters('servers_mehrnoush_server11_name'), '/MehrnoushDB/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_mehrnoush_server11_name'), 'MehrnoushDB')]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_mehrnoush_server11_name'))]"
+            ],
+            "properties": {
+                "recurringScans": {
+                    "isEnabled": false,
+                    "emailSubscriptionAdmins": true,
+                    "emails": []
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default/4167615701269322912-3379244-52777710842169-eastus')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default/asr-254ad3cd-421e-9b77-0ccfb919371a')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default/gway-d12eae08-d878-5ead-88fd-b179d04b71a7')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_mehrnoushstorage11_name'), '/default/mehrnoushcontainer')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_mehrnoushstorage11_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_mehrnoushstorage11_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default/ms-asr-05f9b6f5-3fc3-44ee-89bb-35cf6fd8753c')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default/ms-asr-cbbeb0ba-0b6a-51b7-a527-a5d3381867b7')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), '/default/ms-asr-r-cb6f501d-78e7-57bb-b1b5-f4f9a08c7291')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_nnznwxmehrnoushvasrcache_name'))]"
+            ],
+            "properties": {
+                "immutableStorageWithVersioning": {
+                    "enabled": false
+                },
+                "defaultEncryptionScope": "$account-encryption-key",
+                "denyEncryptionScopeOverride": false,
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/fileServices/shares",
+            "apiVersion": "2022-09-01",
+            "name": "[concat(parameters('storageAccounts_mehrnoushstorage11_name'), '/default/mehrnoushfile11')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/fileServices', parameters('storageAccounts_mehrnoushstorage11_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_mehrnoushstorage11_name'))]"
+            ],
+            "properties": {
+                "accessTier": "Cool",
+                "shareQuota": 5120,
+                "enabledProtocols": "SMB"
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-southeastasia/asr-a2a-default-southeastasia-container/669b9b12-8f5a-47a9-8eb2-aab208001a3f')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia', 'asr-a2a-default-southeastasia-container')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationPolicies', parameters('vaults_MehrnoushVault_name'), '24-hour-retention-policy')]"
+            ],
+            "properties": {
+                "policyId": "[resourceId('Microsoft.RecoveryServices/vaults/replicationPolicies', parameters('vaults_MehrnoushVault_name'), '24-hour-retention-policy')]",
+                "providerSpecificDetails": {
+                    "instanceType": "A2A",
+                    "fabricObjectId": "[parameters('virtualmachines_mehrnoushvm23_externalid')]",
+                    "multiVmGroupId": "75816b52-bb24-4ab0-8261-aef05c132c94"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-southeastasia/asr-a2a-default-southeastasia-container/southeastasia-uksouth-24-hour-retention-policy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia', 'asr-a2a-default-southeastasia-container')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-uksouth', 'asr-a2a-default-uksouth-container')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationPolicies', parameters('vaults_MehrnoushVault_name'), '24-hour-retention-policy')]"
+            ],
+            "properties": {
+                "targetProtectionContainerId": "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-uksouth', 'asr-a2a-default-uksouth-container')]",
+                "policyId": "[resourceId('Microsoft.RecoveryServices/vaults/replicationPolicies', parameters('vaults_MehrnoushVault_name'), '24-hour-retention-policy')]"
+            }
+        },
+        {
+            "type": "Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vaults_MehrnoushVault_name'), '/asr-a2a-default-uksouth/asr-a2a-default-uksouth-container/uksouth-southeastasia-24-hour-retention-policy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-uksouth', 'asr-a2a-default-uksouth-container')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-uksouth')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_MehrnoushVault_name'))]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia', 'asr-a2a-default-southeastasia-container')]",
+                "[resourceId('Microsoft.RecoveryServices/vaults/replicationPolicies', parameters('vaults_MehrnoushVault_name'), '24-hour-retention-policy')]"
+            ],
+            "properties": {
+                "targetProtectionContainerId": "[resourceId('Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers', parameters('vaults_MehrnoushVault_name'), 'asr-a2a-default-southeastasia', 'asr-a2a-default-southeastasia-container')]",
+                "policyId": "[resourceId('Microsoft.RecoveryServices/vaults/replicationPolicies', parameters('vaults_MehrnoushVault_name'), '24-hour-retention-policy')]"
+            }
+        }
+    ]
+}

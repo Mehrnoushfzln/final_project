@@ -1,0 +1,93 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_aadAuthority": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_applicationId": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_audience": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_objectId": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_tenantId": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_machineName": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_aadAuthority_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_applicationId_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_audience_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_objectId_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_5655b730_d62b_55eb_a383_841c00be5079_tenantId_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_aadAuthority": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_applicationId": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_audience": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_objectId": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_tenantId": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_machineName": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_aadAuthority_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_applicationId_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_audience_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_objectId_1": {
+            "value": null
+        },
+        "replicationRecoveryServicesProviders_b0bcb2a3_c98d_5379_b35f_edb6fa016c41_tenantId_1": {
+            "value": null
+        },
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "value": null
+        },
+        "servers_mehrnoush_server11_name": {
+            "value": null
+        },
+        "vaults_MehrnoushVault_name": {
+            "value": null
+        },
+        "storageAccounts_mehrnoushstorage11_name": {
+            "value": null
+        },
+        "storageAccounts_nnznwxmehrnoushvasrcache_name": {
+            "value": null
+        },
+        "automationAccounts_mehrnoush_k9b_asr_automationaccount_name": {
+            "value": null
+        },
+        "virtualmachines_mehrnoushvm23_externalid": {
+            "value": null
+        }
+    }
+}
