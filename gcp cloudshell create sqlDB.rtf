@@ -1,0 +1,106 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\
+Welcome to Cloud Shell! Type "help" to get started.\
+Your Cloud Platform project in this session is set to disasterrecoveryproject-395010.\
+Use \'93gcloud config set project [PROJECT_ID]\'94 to change to a different project.\
+mehrnoosh_fzln@cloudshell:~ (disasterrecoveryproject-395010)$ gcloud sql connect mehrnoush-sql1 --user=root --quiet\
+Allowlisting your IP for incoming connection for 5 minutes...done.                                                                                                                 \
+Connecting to database with SQL user [root].Enter password: \
+Welcome to the MySQL monitor.  Commands end with ; or \\g.\
+Your MySQL connection id is 95\
+Server version: 8.0.31-google (Google)\
+\
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.\
+\
+Oracle is a registered trademark of Oracle Corporation and/or its\
+affiliates. Other names may be trademarks of their respective\
+owners.\
+\
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.\
+\
+mysql> CREATE DATABASE mehrnoush;\
+Query OK, 1 row affected (0.09 sec)\
+\
+mysql> USE mehrnoush;\
+Database changed\
+mysql> CREATE TABLE mehrnoush.customer (\
+    ->     Customer_ID INT PRIMARY KEY,\
+    ->     Customer_Name VARCHAR(255),\
+    ->     Order_ID INT,\
+    ->     Costumer_Address VARCHAR(255),\
+    ->     OrderStatement TEXT,\
+    ->     Customer_Email VARCHAR(255),\
+    ->     Customer_phone VARCHAR(20)\
+    -> );\
+Query OK, 0 rows affected (0.11 sec)\
+\
+mysql> CREATE TABLE mehrnoush.orders (\
+    ->    Order_ID INT PRIMARY KEY,\
+    ->    Order_Date DATE,\
+    ->    Order_Price DECIMAL(10, 2),\
+    ->    Order_Number VARCHAR(20)\
+    -> );\
+Query OK, 0 rows affected (0.11 sec)\
+\
+mysql> SELET * FROM enteries;\
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELET * FROM enteries' at line 1\
+mysql> SELECT * FROM entries;\
+ERROR 1146 (42S02): Table 'mehrnoush.entries' doesn't exist\
+mysql>   SELECT * FROM mehrnoush.customer;\
+Empty set (0.10 sec)\
+\
+mysql> INSERT INTO mehrnoush.customer (Customer_ID, Customer_Name, Order_ID, Costumer_Address, OrderStatement, Customer_Email, Customer_phone)\
+    -> VALUES\
+    ->     (1, 'Mehrnoush', 12, 'Eastbourne street', 'done', 'mehrnoosh.fzln@gmail.com', '123456'),\
+    ->     (2, 'Sam', 11, 'Lincoln', 'done', 'sam.abc@gmail.com', '1234567'),\
+    ->     (3, 'Zara', 13, 'London', 'done', 'zara.smith@gmail.com', '43215'),\
+    ->     (4, 'Mary', 23, 'Liverpool', 'done', 'mary.smith@gmail.com', '76543'),\
+    ->     (5, 'Rolly', 56, 'Lincoln', 'done', 'rolly.hello@gmail.com', '32145');\
+Query OK, 5 rows affected (0.09 sec)\
+Records: 5  Duplicates: 0  Warnings: 0\
+\
+mysql> SELECT * FROM mehrnoush.customer;\
++-------------+---------------+----------+-------------------+----------------+--------------------------+----------------+\
+| Customer_ID | Customer_Name | Order_ID | Costumer_Address  | OrderStatement | Customer_Email           | Customer_phone |\
++-------------+---------------+----------+-------------------+----------------+--------------------------+----------------+\
+|           1 | Mehrnoush     |       12 | Eastbourne street | done           | mehrnoosh.fzln@gmail.com | 123456         |\
+|           2 | Sam           |       11 | Lincoln           | done           | sam.abc@gmail.com        | 1234567        |\
+|           3 | Zara          |       13 | London            | done           | zara.smith@gmail.com     | 43215          |\
+|           4 | Mary          |       23 | Liverpool         | done           | mary.smith@gmail.com     | 76543          |\
+|           5 | Rolly         |       56 | Lincoln           | done           | rolly.hello@gmail.com    | 32145          |\
++-------------+---------------+----------+-------------------+----------------+--------------------------+----------------+\
+5 rows in set (0.10 sec)\
+\
+mysql> INSERT INTO mehrnoush.orders (Order_ID, Order_Date, Order_Price, Order_Number)\
+    -> VALUES\
+    ->     (11, '2023-07-31', 56.00, 3),\
+    ->     (12, '2023-07-31', 34.90, 4),\
+    ->     (13, '2023-07-31', 76.00, 6),\
+    ->     (24, '2023-07-31', 18.98, 2),\
+    ->     (32, '2023-07-31', 56.98, 3),\
+    ->     (34, '2023-07-31', 10.00, 1);\
+Query OK, 6 rows affected (0.09 sec)\
+Records: 6  Duplicates: 0  Warnings: 0\
+\
+mysql> SELECT * FROM mehrnoush.orders;\
++----------+------------+-------------+--------------+\
+| Order_ID | Order_Date | Order_Price | Order_Number |\
++----------+------------+-------------+--------------+\
+|       11 | 2023-07-31 |       56.00 | 3            |\
+|       12 | 2023-07-31 |       34.90 | 4            |\
+|       13 | 2023-07-31 |       76.00 | 6            |\
+|       24 | 2023-07-31 |       18.98 | 2            |\
+|       32 | 2023-07-31 |       56.98 | 3            |\
+|       34 | 2023-07-31 |       10.00 | 1            |\
++----------+------------+-------------+--------------+\
+6 rows in set (0.09 sec)\
+\
+mysql> }
