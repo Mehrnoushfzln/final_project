@@ -22,4 +22,11 @@ Disaster recovery scenarios can be deployed on the Azure platform.
 It consists of the ARM template that deploys a replicating policy strategy on a virtual machine by a created vault. 
 
 # azure-pipelines1 and azure-pipelines 
-azure-pipelines1 and azure-pipelines are Azure pipelines that created by Azure DevOps.
+azure-pipelines1 and azure-pipelines are Azure pipelines created by Azure DevOps.
+
+# gcp cloudshell create sqlDB.rtf
+MySQL commands are executed in Google Cloud Shell to connect to the SQL instance, create tables, and Edit Data. 
+
+
+
+
