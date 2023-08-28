@@ -27,6 +27,9 @@ azure-pipelines1 and azure-pipelines are Azure pipelines created by Azure DevOps
 # gcp cloudshell create sqlDB.rtf
 MySQL commands are executed in Google Cloud Shell to connect to the SQL instance, create tables, and Edit Data. 
 
+# ssh key.txt
+The code is created by the Terminal command line and used to generate an SSH key pair, view the contents of the public key, and the key is added to the VM instance in GCP to create the connection to the Windows Server Virtual Machine through SSH connection. 
+
 
 
 
