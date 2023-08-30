@@ -1,0 +1,16 @@
+"Timestamp","Username","Name ","Occupation","Last level of Education","Based on your experience, how much cloud knowledge does it take to deploy solutions on Microsoft Azure?
+(Please rate from 1 to 10. 1 means no knowledge, 10 means strong knowledge.)","Based on your experience, how much cloud knowledge does it take to deploy solutions on Amazon Web Service?
+(Please rate from 1 to 10. 1 means no knowledge, 10 means strong knowledge.)","Based on your experience, how much cloud knowledge does it take to deploy solutions on Google Cloud Platform?
+(Please rate from 1 to 10. 1 means no knowledge, 10 means strong knowledge.)","Based on your experience which Cloud platform has more Data Processing Capability?","Based on your experience which Cloud platform has more Technology Interoperability","Based on your experience, which cloud platform has the most Dynamic Technology Complexity?","Based on your experience, which cloud platform is more capable of customising resources?","Based on your experience, which cloud platform has better literature for Theory and Practice?","Based on your experience, which cloud platform has better customer service?"
+"2023/08/29 6:13:43 pm CET","morolaanney@gmail.com","Anifowose Morolake","Student","Masters","5","7","3","GCP","AWS","AWS","AWS","Azure","AWS"
+"2023/08/29 6:16:28 pm CET","mehrnoosh.fzln@gmail.com","Mehrnoush","Student","Masters","7","9","9","GCP","AWS","AWS","AWS","AWS","AWS"
+"2023/08/29 6:17:32 pm CET","popoola.olawunmi9@gmail.com","Ola","Student","Bachelor of Science","8","10","9","Azure","Azure","Azure","Azure","Azure","Azure"
+"2023/08/29 6:25:24 pm CET","farshad.vafaee2020@gmail.com","Farshad","Cloud Engineer","Masters","7","9","9","GCP","AWS","AWS","AWS","Azure","AWS"
+"2023/08/29 8:22:42 pm CET","spourroostaei@gmail.com","","Lecturer","Dr","7","8","6","Azure","Azure","AWS","Azure","Azure","GCP"
+"2023/08/30 12:31:11 am CET","","Sid","Student","Masters","5","5","4","AWS","AWS","AWS","AWS","GCP","AWS"
+"2023/08/30 1:50:26 pm CET","","Kelvin Okoeki","Student","Bachelor of Science","9","7","5","GCP","GCP","GCP","GCP","Azure","AWS"
+"2023/08/30 6:03:36 pm CET","","Haseena","Student","Masters","6","10","5","GCP","AWS","AWS","AWS","Azure","AWS"
+"2023/08/30 6:10:04 pm CET","","Ali","Lecturer","Dr","7","9","6","GCP","Azure","AWS","AWS","AWS","AWS"
+"2023/08/30 6:13:25 pm CET","","Gokul","Student","Masters","6","9","5","GCP","AWS","AWS","AWS","Azure","GCP"
+"2023/08/30 6:14:33 pm CET","","Jasmine","Cloud Engineer","Masters","6","10","5","GCP","AWS","AWS","AWS","Azure","AWS"
+"2023/08/30 6:18:51 pm CET","","Sarah","Cloud Engineer","Masters","6","9","5","GCP","AWS","GCP","AWS","AWS","AWS"
