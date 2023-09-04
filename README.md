@@ -2,6 +2,9 @@
 # This repository consists of 9 branches.
 # PLEASE SEE THE BRANCH MORE CODES ARE THERE 
 
+# Complexity folder
+This folder contains python files that evaluate cloud platforms complexity.
+
 # The Evaluation branch
 The evaluation branch consists of three Python file that compares obtained data from a study that compares the cost, backup time, restore time, and complexity of each of the three cloud platforms together 
 for three different cloud-based disaster recovery scenarios. 
